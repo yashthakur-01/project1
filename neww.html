@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Card Pop-up on Hover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: white;
+      width: 280px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>3D Pop-up Effect</h2>
+    <p>This card lifts slightly and zooms in when you hover over it. It feels interactive and modern.</p>
+  </div>
+
+</body>
+</html>
