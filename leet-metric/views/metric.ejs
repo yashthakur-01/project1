@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetMetric</title>
+    <link rel="stylesheet" href="/style/styles2.css" >
+
+    
+</head>
+<body>
+
+    <div class="container">
+    <div class = "main-container" id="card">
+        <div class="top">
+            <div class="heading">
+                <a  href="https://leetcode.com/" target="_blank" rel="noopener"><img class="logo" src="/images/3030025.webp" alt="leetcode logo"></a>
+                <h1 class="heading-text">LeetMetric</h1>
+            </div>
+            <div class="back-div">
+                <a href="/" >
+                    <button class="back-button">
+                   ← Back
+                </button>
+                </a>
+            </div>
+        </div>
+
+
+        <% if(locals.data){ %>
+
+                  <div class="user-name">
+            <h2 class="username-text"> <%= user %></h2>
+        </div>
+
+<div class="stat-container">
+
+
+
+    <div class="questions-count">
+        <div class="progress-card">
+            <div class="easy-count">
+
+            </div>
+            <div class="easy-card">
+                <canvas class="chart" id="easyPieChart"></canvas>
+                <p class="text">Easy</p>
+                <p id="easy-count" class="textt"><%= data.easySolved %>/<%= data.totalEasy %></p>
+            </div>
+        </div>
+
+        <div class="progress-card">
+            <div class="medium-count">
+
+            </div>
+            <div class="medium-card">
+                <canvas class="chart"  id="mediumPieChart"></canvas>
+                <p class="text">Medium</p>
+                <p id="medium-count" class="textt"><%= data.mediumSolved %>/<%= data.totalMedium %></p>
+            </div>
+
+        </div>
+
+        <div class="progress-card">
+            <div class="hard-count">
+
+            </div>
+            <div class="hard-card">
+                <canvas class="chart"  id="hardPieChart"></canvas>
+                <p class="text">Hard</p>
+                <p id="hard-count" class="textt"><%=data.hardSolved %>/<%= data.totalHard %></p>
+            </div>
+
+        </div>
+
+        
+    </div>
+    <div class="info-card">
+        <div class="info-progress-card">
+            <h4>Acceptance Rate</h4>
+            <div class="acceptanceRate">
+                <p><%= data.acceptanceRate %></p>
+            </div>
+        </div>
+        <div class="info-progress-card">
+            <h4>Ranking</h4>
+            <div class="ranking">
+                <p><%= data.ranking %></p>
+            </div>
+        </div>
+        <div class="info-progress-card">
+            <h4>contribution Points</h4>
+            <div class="contributionPoints">
+                <p><%= data.contributionPoints  %></p>
+            </div>
+        </div>
+        <div class="info-progress-card">
+            <h4>Reputation</h4>
+            <div class="reputation">
+                <p><%= data.reputation %></p>
+            </div>
+        </div>
+            
+    </div>
+
+</div>
+
+
+    </div>
+    <div class="footer-div">
+              <footer class="footer">
+            <div class="foot-data">
+                @copywright LeetMetric <%= new Date().getFullYear() %>
+            </div>
+ </footer>
+
+
+        </div>
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>  //put this before loading the script.js (IMP)
+            const statsJSON = '<%- stats %>'; 
+            //json.stringify returns a string -> "<%- %>" this symbol removes the quotes and takes the string content as it is.(useful for sending html content)
+            // again adding  ' ' sumbols again converts it into string... .stringify uses " " so thats why we used single quotes
+            window.leetcodeStats = JSON.parse(statsJSON); //window.varname makes a variable globally available among all the script files
+        </script>
+        <script src="/script.js"></script>
+
+  
+<% }else{ %>
+
+        <div class="user-name">
+            <h2 class="username-text"> Cannot Fetch Username </h2>
+        </div>
+        <div class="error">
+            <p>error</p>
+        </div>
+<% } %>
+    
+        
+
+
+</body>
+</html>

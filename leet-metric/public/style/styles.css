@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #3a3a3a 0%, #000 100%);
+  
+}
+
+.container{
+height: 100vh;
+width: 100vw;
+margin:0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
+padding:0;
+
+}
+.main-container{
+    width: 70%;
+    margin: 0 auto;
+    height: 50%;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4rem;
+
+    box-shadow: 0 12px 25px rgb(185, 182, 182);
+    transition: transform 0.5s ease,box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.main-container:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgb(255, 255, 255);
+    
+}
+
+a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.logo{
+    height:6rem;
+    margin:0 auto;
+}
+
+.heading{
+    display: flex;
+    align-self:flex-start;
+    gap:2rem;
+    padding:3rem;
+
+}
+.heading-text{
+    font-family: "Inconsolata", monospace;
+    font-size: 4rem;
+    color: azure;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+}
+.label{
+    margin: 1.5rem;
+    margin-left: 0;
+    color: azure;
+    text-align: start;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px solid #ccc;
+  background-color: #5b5959;
+  box-shadow: 0 0 12px rgba(172, 172, 166, 0.622);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+  
+  color: rgb(8, 8, 8);
+  font-family: 'Courier New', Courier, monospace;
+}
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #d1d1c8;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  padding: 1.5rem;
+  color: #aaa;
+  font-size: 1.2rem;
+}
